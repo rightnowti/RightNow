@@ -1,0 +1,23 @@
+<tr>
+    <td> <span ng-hide="edicaoFlag"> {{ course.name }} </span> <input type="text"  ng-show="edicaoFlag" ng-model="cursoEdicao.name"/> </td>
+    <td> <span ng-hide="edicaoFlag"> {{ course.duration }} </span> <input type="text" ng-show="edicaoFlag" ng-model="cursoEdicao.duration"/> </td>
+    <td> <span ng-hide="edicaoFlag"> {{ course.educationProject }} </span> <input type="text" ng-show="edicaoFlag" ng-model="cursoEdicao.educationProject"/> </td>
+    <td style="display: inline-flex;">
+        <button title="Clique para habilitar a edição" class="btn btn-success" ng-click="editar()" ng-hide="deletandoFlag || edicaoFlag"  style="background: #10698F !important; margin-left: 10px">
+            <i class="glyphicon glyphicon-pencil"></i>
+        </button>
+        <button title="Clique para completar a edição" class="btn btn-success" ng-click="completarEdicao()" ng-hide="deletandoFlag || !edicaoFlag"  style="background: #10698F !important; margin-left: 10px">
+            <i class="glyphicon glyphicon-floppy-save"></i>
+        </button>
+        <button title="Clique para sair da edição" class="btn btn-danger" ng-click="cancelarEdicao()" ng-hide="deletandoFlag || !edicaoFlag"  style="display: inline; margin-left: 10px">
+            <i class="glyphicon glyphicon-ban-circle"></i>
+        </button>
+        <img src="/static/img/ajax.gif" ng-show="deletandoFlag"/>
+    </td>
+    <td>
+        <button title="Clique para remover o registro" class="btn btn-danger" ng-hide="deletandoFlag" ng-click="deletar()" style="margin-left: 10px">
+            <i class="glyphicon glyphicon-trash"></i>
+        </button>
+        <img src="/static/img/ajax.gif" ng-show="deletandoFlag"/>
+    </td>
+</tr>
